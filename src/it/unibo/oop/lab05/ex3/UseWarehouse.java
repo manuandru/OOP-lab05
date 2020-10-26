@@ -26,18 +26,26 @@ public final class UseWarehouse {
          * Read VERY carefully the comments in the implemented interfaces and use
          * them to run the test.
          */
+    	
 
-        final Product p1 = null;
-        final Product p2 = null;
-        final Product p3 = null;
+        final Product p1 = new ProductImpl("mele", 10);
+        final Product p2 = new ProductImpl("banane", 15);
+        final Product p3 = new ProductImpl("farina", 7.5);
 
-        final Warehouse w = null;
+        final Warehouse w = new WharehouseImpl();
         w.addProduct(p3);
         w.addProduct(p1);
         w.addProduct(p2);
 
         System.out.println(w.allNames());
         System.out.println(w.allProducts());
+        
+        System.out.println(w.containsProduct(p1));
+        System.out.println(w.containsProduct(new ProductImpl("fave", 15)));
+        
+        System.out.println(w.getQuantity("farina"));
+        System.out.println(w.getQuantity("fave"));
+        
 
     }
 
