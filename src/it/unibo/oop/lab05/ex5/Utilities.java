@@ -21,6 +21,10 @@ public final class Utilities {
      *            Collection type
      */
     public static <X> void copyAll(final Collection<X> source, final Collection<? super X> target) {
+    	/*for (var elem : source) {
+    		target.add(elem);
+    	}*/
+    	target.addAll(source);
     }
 
     /**
@@ -32,7 +36,20 @@ public final class Utilities {
      * 
      */
     public static <X> X getRandomElement(final Collection<X> coll) {
-        return null;
+    	
+    	//better use new Random().nextInt(coll.size());
+    	int random = (int) (Math.random() * coll.size());
+    	X value = null;
+    	int count = 0;
+    	
+    	for (var elem : coll) {
+    		if (count == random) {
+    			value = elem;
+    		}
+    		count++;
+    	}
+    	
+        return value;
     }
 
     /**
@@ -47,6 +64,10 @@ public final class Utilities {
      * @return a pair with two random elements
      */
     public static <X, Y> Pair<X, Y> getRandomPair(final Collection<X> one, final Collection<Y> two) {
-        return null;
+    	Pair<X, Y> value = new Pair<>(
+    			Utilities.getRandomElement(one),
+    			Utilities.getRandomElement(two)
+    			);
+        return value;
     }
 }
