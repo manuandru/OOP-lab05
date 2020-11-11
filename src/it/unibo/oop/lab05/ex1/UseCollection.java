@@ -34,11 +34,11 @@ public final class UseCollection {
         coll.remove(1);
         System.out.println(coll);
 
-        /*coll.removeAll(Arrays.asList(11, 13, 15));
+        coll.removeAll(Arrays.asList(11, 13, 15));
         System.out.println(coll);
         coll.retainAll(Arrays.asList(1, 2, 3, 4, 5));
         System.out.println(coll);
         System.out.println(coll.contains(3));
-        System.out.println(Arrays.toString(coll.toArray()));*/
+        System.out.println(Arrays.toString(coll.toArray()));
     }
 }

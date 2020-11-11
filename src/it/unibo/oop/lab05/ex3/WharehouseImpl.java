@@ -1,12 +1,12 @@
 package it.unibo.oop.lab05.ex3;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Set;
 
 
 public class WharehouseImpl implements Warehouse {
 	
-	private final Set<Product> set = new LinkedHashSet<>();
+	private final Set<Product> set = new HashSet<>();
 
 	
 	public void addProduct(Product p) {
@@ -60,7 +60,7 @@ public class WharehouseImpl implements Warehouse {
 	 *@return Set of name of all products 
 	 */
 	private Set<String> nameSet() {
-		final Set<String> names = new LinkedHashSet<>();
+		final Set<String> names = new HashSet<>();
 		for (var elem : this.set) {
 			names.add(elem.getName());
 		}
